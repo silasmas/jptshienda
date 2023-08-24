@@ -4,13 +4,21 @@
 * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
+*
+* Customized by Xanders Samoth
+* https://www.linkedin.com/in/xanders-samoth-b2770737/
 */
+
+/*--------------------------------------------------------------
+# Google Fonts
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap|Open+Sans:wght@300&display=swap');
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #5a656e;
 }
 
@@ -30,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -331,7 +339,7 @@ h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/banner.jpg") top center;
+  background: url('../img/banner.jpg') top center;
   background-size: cover;
   padding: 0 15px;
 }
@@ -349,7 +357,7 @@ h6 {
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 300;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #hero .btn-get-started {
@@ -362,6 +370,10 @@ h6 {
 #hero .btn-get-started:hover {
   padding-top: 10px;
   color: #d43076;
+}
+
+#hero h1, #hero h2, #hero .btn-get-started {
+  z-index: 999;
 }
 
 @media (min-width: 1024px) {
@@ -408,7 +420,7 @@ section {
 }
 
 .section-title h2::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 50px;
@@ -453,7 +465,7 @@ section {
   display: inline-block;
   padding-right: 10px;
   color: #6c757d;
-  content: "/";
+  content: '/';
 }
 
 @media (max-width: 768px) {
@@ -507,13 +519,13 @@ section {
   font-weight: 700;
   color: #2c4964;
   margin-left: 50px;
-  font-family: "Playfair Display", serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .about .content .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 50px;
-  font-family: "Playfair Display", serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #437099;
 }
@@ -524,7 +536,7 @@ section {
   margin-top: 20px;
   color: #437099;
   font-size: 15px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   transition: ease-in-out 0.3s;
 }
 
@@ -533,7 +545,7 @@ section {
 }
 
 .about .image {
-  background: url("../img/me.jpg") center center no-repeat;
+  background: url('../img/me.jpg') center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
@@ -569,7 +581,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #2c4964;
 }
 
@@ -598,7 +610,7 @@ section {
   margin-top: 20px;
   margin-bottom: 20px;
   color: #4b7dab;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .resume .resume-item {
@@ -623,7 +635,7 @@ section {
   display: inline-block;
   font-weight: 400;
   margin-bottom: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .resume .resume-item ul {
@@ -639,7 +651,7 @@ section {
 }
 
 .resume .resume-item::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 16px;
   height: 16px;
@@ -666,7 +678,7 @@ section {
 }
 
 .services .icon-box::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -783,7 +795,7 @@ section {
 }
 
 .portfolio .portfolio-wrap::before {
-  content: "";
+  content: '';
   background: rgba(44, 73, 100, 0.6);
   position: absolute;
   left: 30px;
@@ -1031,7 +1043,7 @@ section {
 .contact .contact-about p {
   font-size: 14px;
   line-height: 24px;
-  font-family: "Playfair Display", serif;
+  font-family: 'Open Sans', serif;
   color: #3c6387;
 }
 
@@ -1106,7 +1118,7 @@ section {
 }
 
 .contact .php-email-form .loading:before {
-  content: "";
+  content: '';
   display: inline-block;
   border-radius: 50%;
   width: 24px;
@@ -1170,4 +1182,20 @@ section {
   padding-top: 8px;
   text-align: center;
   font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# Custom classes
+--------------------------------------------------------------*/
+/* Text */
+.text-blue {
+  color: #0d61a3!important;
+}
+
+.text-green {
+  color: #099135!important;
+}
+
+.text-yellow {
+  color: #f1d90a!important;
 }

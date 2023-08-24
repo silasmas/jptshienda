@@ -14,31 +14,22 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}">
         <link rel="manifest" href="{{ asset('assets/img/favicon/site.webmanifest') }}">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i&subset=cyrillic" rel="stylesheet">
-
         <!-- Font Icons Files -->
         <link rel="stylesheet" href="{{ asset('assets/icons/bootstrap-icons/bootstrap-icons.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/icons/boxicons/css/boxicons.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/icons/remixicon/remixicon.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/addons/lonely/glightbox/css/glightbox.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/icons/fontawesome/css/all.min.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
 
         <!-- Addons CSS Files -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/jquery/jquery-ui/jquery-ui.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/dataTables/datatables.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/show-more/dist/css/show-more.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/cropper/css/cropper.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/croppie/croppie.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/startup/owlcarousel/assets/owl.carousel.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/startup/animate/animate.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/bootstrap/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/addons/custom/mdb/css/mdb.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/addons/custom/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/addons/lonely/swiper/swiper-bundle.min.css') }}">
 
         <!-- Lonely CSS File -->
-        <script src="{{ asset('assets/css/style.lonely.css') }}"></script>
+        <link rel="stylesheet" href="{{ asset('assets/css/style.lonely.css') }}">
         <!-- Custom CSS File -->
-        <script src="{{ asset('assets/css/style.custom.css') }}"></script>
+        <link rel="stylesheet" href="{{ asset('assets/css/style.custom.css') }}">
 
         <title>
 @if (Route::is('home'))
@@ -114,27 +105,37 @@
     <body>
 @yield('guest-content')
 
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>@lang('miscellaneous.foundation_name')</span></strong>. @lang('miscellaneous.all_right_reserved')
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://silasmas.com/">SDEV</a>
+                </div>
+            </div>
+        </footer><!-- End  Footer -->
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
         <!-- JavaScript Libraries -->
         <script src="{{ asset('assets/addons/custom/jquery/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/jquery/jquery-ui/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/purecounter/purecounter_vanilla.js') }}"></script>
         <script src="{{ asset('assets/addons/custom/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/mdb/js/mdb.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/dataTables/datatables.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/show-more/dist/js/showMore.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/cropper/js/cropper.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/croppie/croppie.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/autosize/js/autosize.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/startup/wow/wow.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/startup/easing/easing.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/startup/waypoints/waypoints.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/startup/counterup/counterup.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/startup/owlcarousel/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('assets/js/load-guest-scripts.js') }}"></script>
-        <script src="{{ asset('assets/addons/custom/biliap/js/biliap.cores.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/waypoints/noframework.waypoints.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/php-email-form/validate.js') }}"></script>
 
-        <!-- Startup Javascript -->
-        <script src="{{ asset('assets/js/scripts.startup.js') }}"></script>
+        <!-- Lonely Javascript -->
+        <script src="{{ asset('assets/js/script.lonely.js') }}"></script>
         <!-- Custom Javascript -->
-        <script src="{{ asset('assets/js/scripts.custom.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                
+            });
+        </script>
     </body>
 </html>
