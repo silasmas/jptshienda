@@ -13,6 +13,7 @@ return [
     |
     */
     'drc' => 'République Démocratique du Congo',
+    'foundation_name' => 'Fondation Jean-Pierre Tshienda',
     'slogan' => 'Au côtés des défavorisés',
     'keywords' => 'fondation jean-pierre tshienda,jptshienda,au côtés des défavorisés',
     'all_right_reserved' => 'Tous droits réservés',

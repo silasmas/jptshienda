@@ -13,6 +13,7 @@ return [
     |
      */
     'drc' => 'Democratic Republic of the Congo',
+    'foundation_name' => 'Jean-Pierre Tshienda Foundation',
     'slogan' => 'Alongside the underprivileged',
     'keywords' => 'jean-pierre tshienda foundation, jptshienda, alongside the underprivileged',
     'all_right_reserved' => 'All right reserved',
