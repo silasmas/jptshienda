@@ -67,39 +67,6 @@ Route::get('/about/privacy_policy', 'App\Http\Controllers\Web\HomeController@pri
 */
 // Home
 Route::get('/admin', 'App\Http\Controllers\Web\HomeController@dashboard')->name('admin');
-// Legal info
-Route::get('/legal_info', 'App\Http\Controllers\Web\LegalInfoController@index')->name('legal_info.home');
-Route::get('/legal_info/{id}', 'App\Http\Controllers\Web\LegalInfoController@show')->whereNumber('id')->name('legal_info.datas');
-Route::get('/legal_info/{entity}', 'App\Http\Controllers\Web\LegalInfoController@indexEntity')->name('legal_info.entity.home');
-Route::get('/legal_info/{entity}/{id}', 'App\Http\Controllers\Web\LegalInfoController@showEntity')->whereNumber('id')->name('legal_info.entity.datas');
-Route::get('/legal_info/search/{data}', 'App\Http\Controllers\Web\LegalInfoController@search')->name('legal_info.search');
-Route::get('/legal_info/{entity}/search/{data}', 'App\Http\Controllers\Web\LegalInfoController@searchEntity')->name('legal_info.entity.search');
-Route::get('/legal_info/delete/{id}', 'App\Http\Controllers\Web\LegalInfoController@delete')->name('legal_info.delete');
-Route::get('/legal_info/{entity}/delete/{id}', 'App\Http\Controllers\Web\LegalInfoController@deleteEntity')->name('legal_info.entity.delete');
-Route::post('/legal_info', 'App\Http\Controllers\Web\LegalInfoController@store');
-Route::post('/legal_info/{id}', 'App\Http\Controllers\Web\LegalInfoController@update')->whereNumber('id');
-Route::post('/legal_info/{entity}', 'App\Http\Controllers\Web\LegalInfoController@storeEntity');
-Route::post('/legal_info/{entity}/{id}', 'App\Http\Controllers\Web\LegalInfoController@updateEntity')->whereNumber('id');
-// Country
-Route::get('/country', 'App\Http\Controllers\Web\CountryController@index')->name('country.home');
-Route::get('/country/{id}', 'App\Http\Controllers\Web\CountryController@show')->whereNumber('id')->name('country.datas');
-Route::get('/country/search/{data}', 'App\Http\Controllers\Web\CountryController@search')->name('country.search');
-Route::get('/country/delete/{id}', 'App\Http\Controllers\Web\CountryController@delete')->name('country.delete');
-Route::post('/country', 'App\Http\Controllers\Web\CountryController@store');
-Route::post('/country/{id}', 'App\Http\Controllers\Web\CountryController@update')->whereNumber('id');
-// Miscellaneous
-Route::get('/miscellaneous', 'App\Http\Controllers\Web\MiscellaneousController@index')->name('miscellaneous.home');
-Route::get('/miscellaneous/{id}', 'App\Http\Controllers\Web\MiscellaneousController@show')->whereNumber('id')->name('miscellaneous.datas');
-Route::get('/miscellaneous/{entity}', 'App\Http\Controllers\Web\MiscellaneousController@indexEntity')->name('miscellaneous.entity.home');
-Route::get('/miscellaneous/{entity}/{id}', 'App\Http\Controllers\Web\MiscellaneousController@showEntity')->whereNumber('id')->name('miscellaneous.entity.datas');
-Route::get('/miscellaneous/search/{data}', 'App\Http\Controllers\Web\MiscellaneousController@search')->name('miscellaneous.search');
-Route::get('/miscellaneous/{entity}/search/{data}', 'App\Http\Controllers\Web\MiscellaneousController@searchEntity')->name('miscellaneous.entity.search');
-Route::get('/miscellaneous/delete/{id}', 'App\Http\Controllers\Web\MiscellaneousController@delete')->name('miscellaneous.delete');
-Route::get('/miscellaneous/{entity}/delete/{id}', 'App\Http\Controllers\Web\MiscellaneousController@deleteEntity')->name('miscellaneous.entity.delete');
-Route::post('/miscellaneous', 'App\Http\Controllers\Web\MiscellaneousController@store');
-Route::post('/miscellaneous/{id}', 'App\Http\Controllers\Web\MiscellaneousController@update')->whereNumber('id');
-Route::post('/miscellaneous/{entity}', 'App\Http\Controllers\Web\MiscellaneousController@storeEntity');
-Route::post('/miscellaneous/{entity}/{id}', 'App\Http\Controllers\Web\MiscellaneousController@updateEntity')->whereNumber('id');
 
 /*
 |--------------------------------------------------------------------------
@@ -108,9 +75,6 @@ Route::post('/miscellaneous/{entity}/{id}', 'App\Http\Controllers\Web\Miscellane
 */
 // Home
 Route::get('/developer', 'App\Http\Controllers\Web\HomeController@dashboard')->name('developer');
-// API
-Route::get('/apis', 'App\Http\Controllers\Web\APIController@index')->name('apis.home');
-Route::get('/apis/{entity}', 'App\Http\Controllers\Web\APIController@apisEntity')->name('apis.entity');
 
 /*
 |--------------------------------------------------------------------------
@@ -119,26 +83,26 @@ Route::get('/apis/{entity}', 'App\Http\Controllers\Web\APIController@apisEntity'
 */
 // Home
 Route::get('/manager', 'App\Http\Controllers\Web\HomeController@dashboard')->name('manager');
-// Party
-Route::get('/members', 'App\Http\Controllers\Web\PartyController@members')->name('party.member.home');
-Route::post('/members/new', 'App\Http\Controllers\Web\PartyController@memberAdd')->name('party.member.new');
-Route::get('/members/{id}', 'App\Http\Controllers\Web\PartyController@memberDatas')->whereNumber('id')->name('party.member.datas');
-Route::post('/members/{id}', 'App\Http\Controllers\Web\PartyController@updateMember')->whereNumber('id')->name('party.member.update');
-Route::post('/members/new/check_token', 'App\Http\Controllers\Web\PartyController@checkToken')->name('party.member.new.check_token');
-Route::get('/members/{id}/print_card', 'App\Http\Controllers\Web\PartyController@printCard')->whereNumber('id')->name('party.member.print_card');
-Route::get('/members/{id}/notif_messages', 'App\Http\Controllers\Web\PartyController@memberNotifMessages')->whereNumber('id')->name('party.member.notif_message');
-Route::post('/members/{id}/update_identity_doc', 'App\Http\Controllers\Web\PartyController@updateIdentityDoc')->whereNumber('id')->name('party.member.identity_doc');
-Route::get('/members/search/{data}', 'App\Http\Controllers\Web\PartyController@searchMember')->name('members.search');
-Route::post('/members/send_notif_message', 'App\Http\Controllers\Web\PartyController@sendNotifMessage')->name('members.send_notif_message');
-Route::delete('/members/{id}/notif_messages/{notif_id}', 'App\Http\Controllers\Web\PartyController@deleteNotifMessage')->whereNumber(['id', 'notif_id'])->name('party.member.delete_notif_message');
-Route::get('/managers', 'App\Http\Controllers\Web\PartyController@managers')->name('party.managers');
-Route::get('/managers/new', 'App\Http\Controllers\Web\PartyController@managerAdd')->name('party.manager.new');
-Route::get('/managers/{id}', 'App\Http\Controllers\Web\PartyController@memberDatas')->whereNumber('id')->name('party.manager.datas');
-Route::get('/infos', 'App\Http\Controllers\Web\PartyController@infos')->name('party.infos');
-Route::get('/infos/{entity}', 'App\Http\Controllers\Web\PartyController@infoEntity')->name('party.infos.entity');
-Route::post('/infos/new', 'App\Http\Controllers\Web\PartyController@newInfo')->name('party.infos.new');
-Route::get('/infos/{entity}/{id}', 'App\Http\Controllers\Web\PartyController@infoEntityDatas')->whereNumber('id')->name('party.infos.entity.datas');
-Route::post('/infos/{entity}/{id}', 'App\Http\Controllers\Web\PartyController@updateInfo')->whereNumber('id');
+// Foundation
+Route::get('/members', 'App\Http\Controllers\Web\FoundationController@members')->name('party.member.home');
+Route::post('/members/new', 'App\Http\Controllers\Web\FoundationController@memberAdd')->name('party.member.new');
+Route::get('/members/{id}', 'App\Http\Controllers\Web\FoundationController@memberDatas')->whereNumber('id')->name('party.member.datas');
+Route::post('/members/{id}', 'App\Http\Controllers\Web\FoundationController@updateMember')->whereNumber('id')->name('party.member.update');
+Route::post('/members/new/check_token', 'App\Http\Controllers\Web\FoundationController@checkToken')->name('party.member.new.check_token');
+Route::get('/members/{id}/print_card', 'App\Http\Controllers\Web\FoundationController@printCard')->whereNumber('id')->name('party.member.print_card');
+Route::get('/members/{id}/notif_messages', 'App\Http\Controllers\Web\FoundationController@memberNotifMessages')->whereNumber('id')->name('party.member.notif_message');
+Route::post('/members/{id}/update_identity_doc', 'App\Http\Controllers\Web\FoundationController@updateIdentityDoc')->whereNumber('id')->name('party.member.identity_doc');
+Route::get('/members/search/{data}', 'App\Http\Controllers\Web\FoundationController@searchMember')->name('members.search');
+Route::post('/members/send_notif_message', 'App\Http\Controllers\Web\FoundationController@sendNotifMessage')->name('members.send_notif_message');
+Route::delete('/members/{id}/notif_messages/{notif_id}', 'App\Http\Controllers\Web\FoundationController@deleteNotifMessage')->whereNumber(['id', 'notif_id'])->name('party.member.delete_notif_message');
+Route::get('/managers', 'App\Http\Controllers\Web\FoundationController@managers')->name('party.managers');
+Route::get('/managers/new', 'App\Http\Controllers\Web\FoundationController@managerAdd')->name('party.manager.new');
+Route::get('/managers/{id}', 'App\Http\Controllers\Web\FoundationController@memberDatas')->whereNumber('id')->name('party.manager.datas');
+Route::get('/infos', 'App\Http\Controllers\Web\FoundationController@infos')->name('party.infos');
+Route::get('/infos/{entity}', 'App\Http\Controllers\Web\FoundationController@infoEntity')->name('party.infos.entity');
+Route::post('/infos/new', 'App\Http\Controllers\Web\FoundationController@newInfo')->name('party.infos.new');
+Route::get('/infos/{entity}/{id}', 'App\Http\Controllers\Web\FoundationController@infoEntityDatas')->whereNumber('id')->name('party.infos.entity.datas');
+Route::post('/infos/{entity}/{id}', 'App\Http\Controllers\Web\FoundationController@updateInfo')->whereNumber('id');
 
 /*
 |--------------------------------------------------------------------------
