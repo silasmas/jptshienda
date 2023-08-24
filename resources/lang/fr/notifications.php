@@ -42,6 +42,13 @@ return [
     'no_record' => 'Il n\'y a aucun enregistrement !',
     'create_error' => 'La création a échoué !',
     'update_error' => 'La modification a échoué !',
+    'registered_data' => 'Données enregistrées',
+    'required_fields' => 'Veuillez vérifier les champs obligatoires',
+    'transaction_waiting' => 'Veuillez valider le message de votre opérateur sur votre téléphone. Ensuite appuyez sur le bouton ci-dessous.',
+    'transaction_done' => 'Votre opération est terminée !',
+    'transaction_failed' => 'L\'envoi de votre paiement a échoué',
+    'transaction_type_error' => 'Veuillez choisir le type de transaction',
+    'new_partner_message' => 'Vous pouvez maintenant vous connecter en tant que partenaire avec votre n° de téléphone. Mot de passe temportaire :',
     // LegalInfoSubject
     'find_all_legal_info_subjects_success' => 'Sujets trouvés',
     'find_legal_info_subject_success' => 'Sujet trouvé',
@@ -179,11 +186,11 @@ return [
     'delete_payment_success' => 'Paiement supprimé',
 
     // ===== PLATFORM NOTIFICATIONS
-    'welcome_user' => 'Bienvenue sur l\'application ACR ! Veuillez lire nos conditions avant de commencer.',
-    'welcome_member' => 'Merci de faire confiance au parti ACR. Nous vous notifierons dès que votre adhésion sera approuvé.',
-    'subscribed_to_party' => 'a souscrit au parti.',
+    'welcome_user' => 'Bienvenue sur l\'application JPTSHIENDA ! Veuillez lire nos conditions avant de commencer.',
+    'welcome_member' => 'Merci de faire confiance à la Fondation Jean-Pierre TSHIENDA. Nous vous notifierons dès que votre adhésion sera approuvé.',
+    'subscribed_to_foundation' => 'a souscrit à la fondation.',
     'member_joined' => 'Votre demande d\'adhésion est approuvée. Veuillez lire nos réglements et nos conditions d\'utilisations.',
     'member_locked' => 'Votre compte a été bloqué. Si vous avez des questions, contactez-nous via le n° de téléphone affiché sur notre site web.',
-    'party_published' => 'Le parti a publié',
-    'party_changed' => 'Le parti a modifié',
+    'foundation_published' => 'La fondation a publié',
+    'foundation_changed' => 'La fondation a modifié',
 ];

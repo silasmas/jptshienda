@@ -42,6 +42,13 @@ return [
     'no_record' => 'There is no recording!',
     'create_error' => 'The creation failed!',
     'update_error' => 'The change failed!',
+    'registered_data' => 'Data registered',
+    'required_fields' => 'Please check the required fields',
+    'transaction_waiting' => 'Please confirm the message from your operator on your phone. Then press the button below.',
+    'transaction_done' => 'Your transaction is complete!',
+    'transaction_failed' => 'Failed to send your payment.',
+    'transaction_type_error' => 'Please select transaction type',
+    'new_partner_message' => 'You can now log in as a partner with your phone number. Temporary password:',
     // LegalInfoSubject
     'find_all_legal_info_subjects_success' => 'Subjects found',
     'find_legal_info_subject_success' => 'Subject found',
@@ -179,11 +186,11 @@ return [
     'delete_payment_success' => 'Payment deleted',
 
     // ===== PLATFORM NOTIFICATIONS
-    'welcome_user' => 'WWelcome to the ACR app! Please read our terms before you start.',
-    'welcome_member' => 'Thank you for trusting the ACR party. We will notify you as soon as your membership is approved.',
-    'subscribed_to_party' => 'subscribed to the party.',
+    'welcome_user' => 'Welcome to the JPTSHIENDA app! Please read our terms before you start.',
+    'welcome_member' => 'Thank you for trusting the Jean-Pierre TSHIENDA Foundation. We will notify you as soon as your membership is approved.',
+    'subscribed_to_foundation' => 'subscribed to the foundation.',
     'member_joined' => 'Your membership application is approved. Please read our rules and conditions of use.',
     'member_locked' => 'Your account has been blocked. If you have any questions, contact us via the telephone number displayed on our website.',
-    'party_published' => 'The party issued',
-    'party_changed' => 'The party has changed',
+    'foundation_published' => 'The foundation issued',
+    'foundation_changed' => 'The foundation has changed',
 ];

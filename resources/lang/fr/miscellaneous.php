@@ -13,12 +13,12 @@ return [
     |
     */
     'drc' => 'République Démocratique du Congo',
-    'slogan' => 'ACR | La politique de l\'amour',
-    'keywords' => 'Action Commune pour la République,acr,l\'amour de la politique,politique de l\'amour',
+    'slogan' => 'Au côtés des défavorisés',
+    'keywords' => 'fondation jean-pierre tshienda,jptshienda,au côtés des défavorisés',
     'all_right_reserved' => 'Tous droits réservés',
     'follow_us' => 'Suivez-nous :',
     'call_us' => 'Appelez-nous :',
-    'bank_transaction_description' => 'Transaction bancaire depuis l\'application ACR',
+    'bank_transaction_description' => 'Transaction bancaire depuis l\'application JPTSHIENDA',
     'your_language' => 'Votre langue',
     'back_home' => 'Retour à l\'accueil',
     'back_list' => 'Retourner à la liste',
@@ -246,15 +246,6 @@ return [
     'currency' => 'Choisir devise',
     'usd' => 'Dollar américain',
     'cdf' => 'Franc congolais',
-    // Alert message
-    'registered_data' => 'Données enregistrées',
-    'no_data' => 'Ces données n\'existent pas',
-    'required_fields' => 'Veuillez vérifier les champs obligatoires',
-    'transaction_waiting' => 'Veuillez valider le message de votre opérateur sur votre téléphone. Ensuite appuyez sur le bouton ci-dessous.',
-    'transaction_done' => 'Votre opération est terminée !',
-    'transaction_failed' => 'L\'envoi de votre paiement a échoué',
-    'transaction_type_error' => 'Veuillez choisir le type de transaction',
-    'new_partner_message' => 'Vous pouvez maintenant vous connecter en tant que partenaire avec votre n° de téléphone. Mot de passe temportaire :',
 
     // ===== NAVIGATION MENU
     'menu' => [

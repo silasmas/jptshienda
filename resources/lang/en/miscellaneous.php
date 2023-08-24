@@ -13,12 +13,12 @@ return [
     |
      */
     'drc' => 'Democratic Republic of the Congo',
-    'slogan' => 'ACR | Politics of love',
-    'keywords' => 'Common Action for the Republic,acr,love of politics,politics of love',
+    'slogan' => 'Alongside the underprivileged',
+    'keywords' => 'jean-pierre tshienda foundation, jptshienda, alongside the underprivileged',
     'all_right_reserved' => 'All right reserved',
     'follow_us' => 'Follow us:',
     'call_us' => 'Call us:',
-    'bank_transaction_description' => 'Bank transaction from the ACR application',
+    'bank_transaction_description' => 'Bank transaction from the JPTSHIENDA application',
     'your_language' => 'Your language',
     'back_home' => 'Return to the home',
     'back_list' => 'Return to the list',
@@ -246,15 +246,6 @@ return [
     'currency' => 'Choose currency',
     'usd' => 'American dollar',
     'cdf' => 'Congolese franc',
-    // Alert message
-    'registered_data' => 'Data registered',
-    'no_data' => 'This datas don\'t exist',
-    'required_fields' => 'Please check the required fields',
-    'transaction_waiting' => 'Please confirm the message from your operator on your phone. Then press the button below.',
-    'transaction_done' => 'Your transaction is complete!',
-    'transaction_failed' => 'Failed to send your payment.',
-    'transaction_type_error' => 'Please select transaction type',
-    'new_partner_message' => 'You can now log in as a partner with your phone number. Temporary password:',
 
     // ===== NAVIGATION MENU
     'menu' => [
