@@ -33,7 +33,7 @@
 
         <title>
 @if (Route::is('home'))
-            J-P Tshienda | @lang('miscellaneous.slogan')
+            J-P TSHIENDA | @lang('miscellaneous.slogan')
 @endif
 
 @if (Route::is('account') || Route::is('account.update.password'))

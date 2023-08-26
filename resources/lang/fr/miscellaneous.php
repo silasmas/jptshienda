@@ -13,9 +13,10 @@ return [
     |
     */
     'drc' => 'République Démocratique du Congo',
-    'foundation_name' => 'Fondation Jean-Pierre Tshienda',
+    'foundation_name' => 'Fondation Jean Pierre Tshienda',
+    'foundation_description' => 'Notre vocation première est de soutenir les défavorisés, en particulier dans le district de LUKUNGA et dans toute la République Démocratique du Congo, pour faciliter leur épanouissement socio-économique et culturel.',
     'slogan' => 'Au côtés des défavorisés',
-    'keywords' => 'fondation jean-pierre tshienda,jptshienda,au côtés des défavorisés',
+    'keywords' => 'fondation jean pierre tshienda,jptshienda,au côtés des défavorisés',
     'all_right_reserved' => 'Tous droits réservés',
     'follow_us' => 'Suivez-nous :',
     'call_us' => 'Appelez-nous :',
@@ -550,18 +551,22 @@ return [
         // Footer
         'footer' => [
             'useful_links' => 'Liens utiles',
+            'message' => [
+                'subject' => 'Sujet',
+                'content' => 'Contenu du message'
+            ],
             'head_office' => [
                 'title' => 'Notre siège social',
-                'address' => '102, ave Kabinda, C/Kinshasa 012, Kinshasa-RDC',
-                'phone' => '+243 810 503 074',
-                'email' => 'acr@gmail.com'
+                'address' => '73, avenue LOPORI, Commune de KASA-VUBU, Kinshasa-RDC',
+                'phone' => '+243 000 000 000',
+                'email' => 'fondationjptshienda@gmail.com'
             ],
             'newsletter' => [
                 'title' => 'Newsletter',
                 'text' => 'Abonnez-vous pour recevoir nos infos les plus pertinentes.',
                 'email' => 'Votre e-mail',
                 'submit' => 'Envoyer'
-            ],
+            ]
         ],
 
         // Home

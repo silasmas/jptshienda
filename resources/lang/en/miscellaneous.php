@@ -13,9 +13,10 @@ return [
     |
      */
     'drc' => 'Democratic Republic of the Congo',
-    'foundation_name' => 'Jean-Pierre Tshienda Foundation',
+    'foundation_name' => 'Jean Pierre Tshienda Foundation',
+    'foundation_description' => 'Our primary vocation is to support the underprivileged, particularly in the LUKUNGA district and throughout the Democratic Republic of Congo, to facilitate their socio-economic and cultural development.',
     'slogan' => 'Alongside the underprivileged',
-    'keywords' => 'jean-pierre tshienda foundation, jptshienda, alongside the underprivileged',
+    'keywords' => 'jean pierre tshienda foundation, jptshienda, alongside the underprivileged',
     'all_right_reserved' => 'All right reserved',
     'follow_us' => 'Follow us:',
     'call_us' => 'Call us:',
@@ -550,18 +551,22 @@ return [
         // Footer
         'footer' => [
             'useful_links' => 'Useful links',
+            'message' => [
+                'subject' => 'Subject',
+                'content' => 'Message content'
+            ],
             'head_office' => [
                 'title' => 'Our head office',
-                'address' => '102, Kabinda street, Kinshasa 012 area, Kinshasa-DRC',
-                'phone' => '+243 810 503 074',
-                'email' => 'acr@gmail.com',
+                'address' => '73, LOPORI street, Municipality of KASA-VUBU, Kinshasa-DRC',
+                'phone' => '+243 000 000 000',
+                'email' => 'fondationjptshienda@gmail.com'
             ],
             'newsletter' => [
                 'title' => 'Newsletter',
                 'text' => 'Subscribe to receive our most relevant information.',
                 'email' => 'Your email',
-                'submit' => 'Send',
-            ],
+                'submit' => 'Send'
+            ]
         ],
 
         // Home
