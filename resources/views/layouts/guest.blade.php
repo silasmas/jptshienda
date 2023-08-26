@@ -183,24 +183,157 @@
 
                         <div class="col-lg-5 col-md-8">
                             <form action="" method="post" role="form" class="php-email-form mt-sm-0 mt-3">
-                                <div class="form-group">
-                                    <input type="text" name="register_names" id="register_names" class="form-control" placeholder="@lang('miscellaneous.names')" required>
+@csrf
+                                <input type="hidden" name="offer_type_id" value="9">
+
+                                <div id="donorIdentity" class="row g-3 mb-4">
+                                    <div class="col-12">
+                                        <h3 class="text-uppercase text-green">@lang('miscellaneous.menu.public.donate')</h3>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="register_firstname" placeholder="@lang('miscellaneous.firstname')">
+                                            <label for="register_firstname">@lang('miscellaneous.firstname')</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="register_lastname" placeholder="@lang('miscellaneous.lastname')">
+                                            <label for="register_lastname">@lang('miscellaneous.lastname')</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5">
+                                        <div class="form-floating pt-0">
+                                            <select name="select_country_user" id="select_country2" class="form-select pt-2 shadow-0">
+                                                <option class="small" selected disabled>@lang('miscellaneous.choose_country')</option>
+@forelse ($countries as $country)
+                                                <option value="+{{ $country->country_phone_code }}">{{ $country->country_name }}</option>
+@empty
+                                                <option>@lang('miscellaneous.empty_list')</option>
+@endforelse
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7">
+                                        <div class="input-group">
+                                            <span id="phone_code_text2" class="input-group-text d-inline-block h-100 bg-light" style="padding-top: 0.3rem; padding-bottom: 0.5rem; line-height: 1.35;">
+                                                <small class="text-secondary m-0 p-0" style="font-size: 0.85rem; color: #010101;">
+                                                    @lang('miscellaneous.phone_code')
+                                                </small><br>
+                                                <span class="text-value">xxxx</span>
+                                            </span>
+
+                                            <div class="form-floating">
+                                                <input type="tel" name="phone_number_user" id="phone_number_user" class="form-control" placeholder="@lang('miscellaneous.phone')">
+                                                <label for="phone_number_user">@lang('miscellaneous.phone')</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="email" name="register_email" id="register_email" class="form-control" placeholder="@lang('miscellaneous.email')">
+                                            <label for="register_email">@lang('miscellaneous.email')</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group mt-3">
-                                    <input type="email" name="register_email" id="register_email" class="form-control" placeholder="@lang('miscellaneous.email')" required>
+
+                                <div id="financialDonation" class="row g-3 mb-4">
+                                    <div class="col-12">
+                                        {{-- <h5 class="h5 m-0 text-uppercase fw-bolder">@lang('miscellaneous.public.home.donate.send_money.title')</h5> --}}
+                                        <p class="small m-0 text-muted">@lang('miscellaneous.public.home.donate.send_money.description')</p>
+                                    </div>
+
+                                    <div id="paymentMethod">
+@foreach ($transaction_types as $type)
+    @if ($type->type_name == 'Mobile money')
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input mt-2" type="radio" name="transaction_type_id" id="mobile_money" value="{{ $type->id }}" />
+                                            <label class="form-check-label" for="mobile_money">
+                                                <img src="{{ asset('assets/img/payment-mobile-money.png') }}" alt="Mobile money" width="40">
+                                                @lang('miscellaneous.public.home.donate.send_money.mobile_money')
+                                            </label>
+                                        </div>
+    @else
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input mt-2" type="radio" name="transaction_type_id" id="bank_card" value="{{ $type->id }}" />
+                                            <label class="form-check-label" for="bank_card">
+                                                <img src="{{ asset('assets/img/payment-credit-card.png') }}" alt="Carte bancaire" width="40">
+                                                @lang('miscellaneous.public.home.donate.send_money.bank_card')
+                                            </label>
+                                        </div>
+    @endif
+@endforeach
+                                    </div>
                                 </div>
-                                <div class="form-group mt-3">
-                                    <input type="text" name="register_subject" id="register_subject" class="form-control" placeholder="@lang('miscellaneous.public.footer.message.subject')" required>
+
+                                <div id="amountCurrency" class="row mb-3">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="form-floating">
+                                                <input type="number" name="register_amount" id="register_amount" class="form-control" placeholder="@lang('miscellaneous.amount')" required{{ \Session::has('error_message') ? ' autofocus' : '' }}>
+                                                <label for="register_amount">@lang('miscellaneous.amount')</label>
+                                            </div>
+
+                                            <div class="input-group-prepend">
+                                                <select name="select_currency" id="select_currency" class="form-select input-group-text ps-3 pe-4 py-3 shadow-0" style="height: 3.63rem; background-color: #f3f3f3; border-end-start-radius: 0; border-start-start-radius: 0;">
+                                                    <option class="small" selected disabled>@lang('miscellaneous.currency')</option>
+                                                    <option value="USD">@lang('miscellaneous.usd')</option>
+                                                    <option value="CDF">@lang('miscellaneous.cdf')</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group mt-3">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="@lang('miscellaneous.public.footer.message.content')" required></textarea>
+
+                                <div id="phoneNumberForMoney" class="row">
+                                    <div class="col-lg-5 mb-3">
+                                        <div class="form-floating pt-0">
+                                            <select name="select_country" id="select_country3" class="form-select pt-2 shadow-0">
+                                                <option class="small" selected disabled>@lang('miscellaneous.choose_country')</option>
+@forelse ($countries as $country)
+                                                <option value="{{ $country->country_phone_code }}">{{ $country->country_name }}</option>
+@empty
+                                                <option>@lang('miscellaneous.empty_list')</option>
+@endforelse
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7">
+                                        <div class="input-group">
+                                            <span id="phone_code_text3" class="input-group-text d-inline-block h-100 bg-light" style="padding-top: 0.3rem; padding-bottom: 0.5rem; line-height: 1.35;">
+                                                <small class="text-secondary m-0 p-0" style="font-size: 0.85rem; color: #010101;">@lang('miscellaneous.phone_code')</small><br>
+                                                <span class="text-value">xxxx</span>
+                                            </span>
+            
+                                            <div class="form-floating">
+                                                <input type="hidden" id="phone_code3" name="other_phone_code" value="">
+                                                <input type="tel" name="other_phone_number" id="other_phone_number" class="form-control" placeholder="@lang('miscellaneous.phone')">
+                                                <label for="other_phone_number">@lang('miscellaneous.phone')</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                <div id="otherDonation" class="row mt-1 mb-4 g-3">
+                                    <div class="col-12">
+                                        <h5 class="h5 m-0 text-uppercase fw-bolder">@lang('miscellaneous.public.home.donate.other_donation.title')</h5>
+                                    </div>
+            
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea name="register_offer_name" id="register_offer_name" class="form-control" placeholder="Décrivez votre don" style="height: 100px"></textarea>
+                                            <label for="register_offer_name">@lang('miscellaneous.public.home.donate.other_donation.description')</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="text-center"><button type="submit">Send Message</button></div>
+            
+                                <button class="btn btn-block btn-secondary rounded-pill py-3 px-5" type="submit">@lang('miscellaneous.send')</button>
                             </form>
                         </div>
                     </div>
