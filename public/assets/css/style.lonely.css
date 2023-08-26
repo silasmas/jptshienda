@@ -154,11 +154,16 @@ h6 {
   margin-left: 5px;
 }
 
-.navbar a:hover,
 .navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-  color: #d43076;
+.navbar a:hover,
+.navbar li:hover>a,
+.navbar .active:focus {
+  color: #099135;
+}
+
+.navbar .btn:hover,
+.navbar .btn:focus {
+  color: #f1d90a;
 }
 
 .navbar .dropdown ul {
@@ -193,7 +198,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #d43076;
+  color: #f1d90a;
 }
 
 .navbar .dropdown:hover>ul {
@@ -292,7 +297,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #d43076;
+  color: #f1d90a;
 }
 
 .navbar-mobile .getstarted,
@@ -327,7 +332,7 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #d43076;
+  color: #f1d90a;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -370,7 +375,7 @@ h6 {
 
 #hero .btn-get-started:hover {
   padding-top: 10px;
-  color: #d43076;
+  color: #f1d90a;
 }
 
 #hero h1, #hero h2, #hero .btn-get-started {
