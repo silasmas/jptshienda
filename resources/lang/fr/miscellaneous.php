@@ -571,34 +571,37 @@ return [
 
         // Home
         'home' => [
-            'slide1' => [
-                'title' => 'Écrivons l\'histoire et faisons la politique autrement',
-                'content' => 'Tous engagés dans la politique de l\'amour'
-            ],
-            'slide2' => [
-                'title' => 'Soutien aux FARDC contre l\'agression à l\'Est du pays',
-                'content' => 'Pour une armée forte et disciplinée'
-            ],
-            'slide3' => [
-                'title' => 'Assurer de la nourriture pour notre peuple',
-                'content' => 'À travers une bonne politique agricole'
+            'who_are_we' => [
+                'title' => 'Qui sommes-nous ?',
+                'content' => 'Nous sommes une fondation qui soutient les défavorisés, en particulier dans le district de LUKUNGA et dans toute la République Démocratique du Congo, pour faciliter leur épanouissement socio-économique et culturel.',
+                'children' => [
+                    'title' => 'Enfants',
+                    'content' => 'qui sont inscrits dans les écoles et dont nous prenons soin en cas de maladie et autres besoins.'
+                ],
+                'partners' => [
+                    'title' => 'Partenaires',
+                    'content' => 'qui contribuent financièrement ou autrement pour l\'avancement de la fondation.'
+                ],
             ],
             'download_mobile_app' => [
-                'title' => 'Télécharger l\'appli mobile ACR',
-                'content' => 'L\'appli mobile ACR vous permet d\'adhérer au parti <span class="acr-text-yellow">Action Commune pour la République</span>, de rester informé(e) sur les infos du parti et de contribuer en ligne.'
+                'title' => 'Télécharger l\'appli mobile JPTSHIENDA',
+                'content' => 'L\'appli mobile JPTSHIENDA vous permet d\'adhérer à la <span class="text-yellow">Fondation Jean Pierre Tshienda</span>, de rester informé(e) sur les infos de la fondation et de contribuer en ligne.'
             ],
-            'register_member' => [
+            'join_us' => [
                 'title' => 'Nous réjoindre',
-                'content1' => 'Vous pouvez nous réjoindre, car ACR n\'est pas qu\'une affaire de quelques individus. Ensemble, unissons-nous en un réel engagement pour transformer notre pays.',
-                'content2' => 'Si vous êtes déjà inscrit(e) dans le site ou dans l\'appli mobile, cliquez sur le bouton ci-dessous pour vous connecter. Sinon, donnez vos noms et votre n&deg; de téléphone pour commencer.',
-                'login' => 'J\'ai déjà un compte',
-                'register' => 'Commencer l\'inscription'
+                'content' => 'Si vous êtes déjà inscrit(e) dans le site ou dans l\'appli mobile, cliquez sur le bouton ci-dessous pour vous connecter. Sinon, donnez vos noms et votre n&deg; de téléphone pour commencer.'
+            ],
+            'projects' => [
+                'title' => 'Projects',
+                'all' => 'Tous',
+                'project1' => 'Public',
+                'project2' => 'Enfants',
+                'project3' => 'Malades'
             ],
             'donate' => [
                 'title' => 'Faire un don anonyme ou devenir partenaire',
-                'content1' => 'En soutenant le parti ACR, non seulement vous contribuez au changement de votre pays, mais aussi vous contribuez à l\'aide qu\'apporte le parti aux ophelins et aux démunis.',
-                'content2' => 'Si c\'est l\'argent que vous voulez envoyer, vous n\'avez qu\'à sélectionner le mode de paiement ; ensuite, vous l\'envoyez directement en ligne.',
-                'content3' => 'Si vous voulez donner autre chose que de l\'argent, vous n\'avez qu\'à donner la description de votre don.',
+                'content1' => 'Si c\'est l\'argent que vous voulez envoyer, vous n\'avez qu\'à sélectionner le mode de paiement ; ensuite, vous l\'envoyez directement en ligne.',
+                'content2' => 'Si vous voulez donner autre chose que de l\'argent, vous n\'avez qu\'à donner la description de votre don.',
                 'anonyme' => 'Faire un don anonyme',
                 'partner' => 'Devenir partenaire',
                 'your_identity' => 'Votre identité',

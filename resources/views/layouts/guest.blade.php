@@ -23,7 +23,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
 
         <!-- Addons CSS Files -->
+        <link rel="stylesheet" href="{{ asset('assets/addons/custom/mdb/css/mdb.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/addons/custom/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/addons/custom/jquery/css/jquery-ui.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/addons/lonely/swiper/swiper-bundle.min.css') }}">
 
         <!-- Lonely CSS File -->
@@ -182,13 +184,13 @@
                         </div>
 
                         <div class="col-lg-5 col-md-8">
-                            <form action="" method="post" role="form" class="php-email-form mt-sm-0 mt-3">
+                            <form action="{{ route('donate') }}" method="POST" role="form" class="php-email-form mt-sm-0 mt-3">
 @csrf
                                 <input type="hidden" name="offer_type_id" value="9">
 
                                 <div id="donorIdentity" class="row g-3 mb-4">
                                     <div class="col-12">
-                                        <h3 class="text-uppercase text-green">@lang('miscellaneous.menu.public.donate')</h3>
+                                        <h3 class="mb-0 text-uppercase fw-bold text-green">@lang('miscellaneous.menu.public.donate')</h3>
                                     </div>
 
                                     <div class="col-md-6">
@@ -244,8 +246,7 @@
 
                                 <div id="financialDonation" class="row g-3 mb-4">
                                     <div class="col-12">
-                                        {{-- <h5 class="h5 m-0 text-uppercase fw-bolder">@lang('miscellaneous.public.home.donate.send_money.title')</h5> --}}
-                                        <p class="small m-0 text-muted">@lang('miscellaneous.public.home.donate.send_money.description')</p>
+                                        <h5 class="h5 m-0 fw-bolder">@lang('miscellaneous.public.home.donate.send_money.description')</h5>
                                     </div>
 
                                     <div id="paymentMethod">
@@ -253,7 +254,7 @@
     @if ($type->type_name == 'Mobile money')
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input mt-2" type="radio" name="transaction_type_id" id="mobile_money" value="{{ $type->id }}" />
-                                            <label class="form-check-label" for="mobile_money">
+                                            <label role="button" class="form-check-label" for="mobile_money">
                                                 <img src="{{ asset('assets/img/payment-mobile-money.png') }}" alt="Mobile money" width="40">
                                                 @lang('miscellaneous.public.home.donate.send_money.mobile_money')
                                             </label>
@@ -261,7 +262,7 @@
     @else
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input mt-2" type="radio" name="transaction_type_id" id="bank_card" value="{{ $type->id }}" />
-                                            <label class="form-check-label" for="bank_card">
+                                            <label role="button" class="form-check-label" for="bank_card">
                                                 <img src="{{ asset('assets/img/payment-credit-card.png') }}" alt="Carte bancaire" width="40">
                                                 @lang('miscellaneous.public.home.donate.send_money.bank_card')
                                             </label>
@@ -322,7 +323,7 @@
 
                                 <div id="otherDonation" class="row mt-1 mb-4 g-3">
                                     <div class="col-12">
-                                        <h5 class="h5 m-0 text-uppercase fw-bolder">@lang('miscellaneous.public.home.donate.other_donation.title')</h5>
+                                        <h5 class="h5 m-0 fw-bolder">@lang('miscellaneous.public.home.donate.other_donation.title')</h5>
                                     </div>
             
                                     <div class="col-12">
@@ -333,7 +334,7 @@
                                     </div>
                                 </div>
             
-                                <button class="btn btn-block btn-secondary rounded-pill py-3 px-5" type="submit">@lang('miscellaneous.send')</button>
+                                <button class="btn btn-secondary w-100 rounded-pill" type="submit">@lang('miscellaneous.send')</button>
                             </form>
                         </div>
                     </div>
@@ -353,12 +354,16 @@
             </div>
         </footer><!-- End  Footer -->
 
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <a role="button" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
         <!-- JavaScript Libraries -->
         <script src="{{ asset('assets/addons/custom/jquery/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/addons/lonely/purecounter/purecounter_vanilla.js') }}"></script>
+        <script src="{{ asset('assets/addons/custom/jquery/js/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/custom/mdb/js/mdb.min.js') }}"></script>
         <script src="{{ asset('assets/addons/custom/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/lonely/purecounter/purecounter_vanilla.js') }}"></script>
+        <script src="{{ asset('assets/addons/custom/autosize/js/autosize.min.js') }}"></script>
+        <script src="{{ asset('assets/addons/custom/parallax/parallax.min.js') }}"></script>
         <script src="{{ asset('assets/addons/lonely/glightbox/js/glightbox.min.js') }}"></script>
         <script src="{{ asset('assets/addons/lonely/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ asset('assets/addons/lonely/swiper/swiper-bundle.min.js') }}"></script>
@@ -370,7 +375,100 @@
         <!-- Custom Javascript -->
         <script type="text/javascript">
             $(document).ready(function () {
-                
+                $('.navbar, .card, .btn').addClass('shadow-0');
+                $('.btn').css({textTransform: 'inherit', paddingBottom: '0.5rem'});
+                $('.back-to-top').click(function (e) {
+                    $("html, body").animate({ scrollTop: "0" });
+                });
+
+                /* Auto-resize textarea */
+                autosize($('textarea'));
+
+                /* jQuery Date picker */
+                var currentLanguage = $('html').attr('lang');
+
+                $('#register_birthdate').datepicker({
+                    dateFormat: currentLanguage.startsWith('fr') ? 'dd/mm/yy' : 'mm/dd/yy',
+                    onSelect: function () {
+                        $(this).focus();
+                    }
+                });
+
+                /* On select change, update de country phone code */
+                $('#select_country1').on('change', function () {
+                    var countryPhoneCode = $(this).val();
+
+                    $('#phone_code_text1 .text-value').text(countryPhoneCode);
+                    $('#phone_code1').val(countryPhoneCode);
+                });
+                $('#select_country2').on('change', function () {
+                    var countryPhoneCode = $(this).val();
+
+                    $('#phone_code_text2 .text-value').text(countryPhoneCode);
+                    $('#phone_code2').val(countryPhoneCode);
+                });
+                $('#select_country3').on('change', function () {
+                    var countryPhoneCode = $(this).val();
+
+                    $('#phone_code_text3 .text-value').text(countryPhoneCode);
+                    $('#phone_code3').val(countryPhoneCode);
+                });
+
+                /* On select, show/hide some blocs */
+                // IDENTITY DOC DESCRIPTION
+                $('#register_image_name').on('change', function () {
+                    if ($('#register_image_name option').filter(':selected').text() == 'Autre' || $('#register_image_name option').filter(':selected').text() == 'Other') {
+                        $('#docDescription').removeClass('d-none');
+
+                    } else {
+                        $('#docDescription').addClass('d-none');
+                    }
+                });
+
+                /* On check, show/hide some blocs */
+                // OFFER TYPE
+                $('#donationType .form-check-input').each(function () {
+                    $(this).on('click', function () {
+                        if ($('#anonyme').is(':checked')) {
+                            $('#donorIdentity, #otherDonation').addClass('d-none');
+
+                        } else {
+                            $('#donorIdentity, #otherDonation').removeClass('d-none');
+                        }
+                    });
+                });
+                // TRANSACTION TYPE
+                $('#paymentMethod .form-check-input').each(function () {
+                    $(this).on('click', function () {
+                        if ($('#bank_card').is(':checked')) {
+                            $('#phoneNumberForMoney').addClass('d-none');
+
+                        } else {
+                            $('#phoneNumberForMoney').removeClass('d-none');
+                        }
+                    });
+                });
+
+                /* Mark all notifications as read */
+                $('#markAllRead').click(function (e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        headers: headers,
+                        type: 'PUT',
+                        contentType: 'application/json',
+                        url: currentHost + '/api/notification/mark_all_read/' + parseInt($(this).attr('data-user-id')),
+                        success: function () {
+                            window.location.reload();
+                        },
+                        error: function (xhr, error, status_description) {
+                            console.log(xhr.responseJSON);
+                            console.log(xhr.status);
+                            console.log(error);
+                            console.log(status_description);
+                        }
+                    });
+                });
             });
         </script>
     </body>

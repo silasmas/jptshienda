@@ -571,34 +571,37 @@ return [
 
         // Home
         'home' => [
-            'slide1' => [
-                'title' => 'Let\'s write history and do politics differently',
-                'content' => 'All engaged in the politics of love',
-            ],
-            'slide2' => [
-                'title' => 'Support for the FARDC against aggression in the east of the country',
-                'content' => 'For a strong and disciplined army',
-            ],
-            'slide3' => [
-                'title' => 'Securing food for our people',
-                'content' => 'Through a good agricultural policy',
+            'who_are_we' => [
+                'title' => 'Who are we?',
+                'content' => '',
+                'children' => [
+                    'title' => 'Children',
+                    'content' => ''
+                ],
+                'partners' => [
+                    'title' => 'Partners',
+                    'content' => ''
+                ],
             ],
             'download_mobile_app' => [
-                'title' => 'Download the ACR mobile app',
-                'content' => 'The ACR mobile app allows you to join the <span class="acr-text-yellow">Action Commune pour la République</span> party, stay informed about party news and contribute online.',
+                'title' => 'Download the JPTSHIENDA mobile app',
+                'content' => 'The JPTSHIENDA mobile app allows you to join the <span class="text-yellow">Jean Pierre Tshienda Foundation</span>, stay informed about foundation news and contribute online.',
             ],
-            'register_member' => [
+            'join_us' => [
                 'title' => 'Join us',
-                'content1' => 'You can join us, because ACR is not just a matter of a few individuals. Together, let us unite in a real commitment to transform our country.',
-                'content2' => 'If you are already registered in the site or in the mobile app, click on the button below to log in. Otherwise, give your names and your phone number to start.',
-                'login' => 'I already have an account',
-                'register' => 'Start registration',
+                'content' => 'If you are already registered in the site or in the mobile app, click on the button below to log in. Otherwise, give your names and your phone number to start.'
+            ],
+            'projects' => [
+                'title' => 'Projets',
+                'all' => 'All',
+                'project1' => 'Public',
+                'project2' => 'Children',
+                'project3' => 'Unwell'
             ],
             'donate' => [
                 'title' => 'Make an anonymous donation or become a partner',
-                'content1' => 'By supporting the ACR party, you not only contribute to the change of your country, but also you contribute to the help that the party brings to the ophelines and the poor.',
-                'content2' => 'If it\'s money you want to send, just select the payment method; then you send it directly online.',
-                'content3' => 'If you want to donate something other than money, just enter a description of your donation.',
+                'content1' => 'If it\'s money you want to send, just select the payment method; then you send it directly online.',
+                'content2' => 'If you want to donate something other than money, just enter a description of your donation.',
                 'anonyme' => 'Make an anonymous donation',
                 'partner' => 'Become a partner',
                 'your_identity' => 'Your identity',

@@ -167,7 +167,7 @@ textarea {
 
 .navbar .btn:hover,
 .navbar .btn:focus {
-  color: #f1d90a;
+  color: white;
 }
 
 .navbar .dropdown ul {
@@ -555,7 +555,7 @@ section {
 }
 
 .about .image {
-  background: url('../img/me.jpg') center center no-repeat;
+  background: url('../img/pubs/pub001.jpg') center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
