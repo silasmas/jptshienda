@@ -592,7 +592,7 @@ return [
                 'content' => 'If you are already registered in the site or in the mobile app, click on the button below to log in. Otherwise, give your names and your phone number to start.'
             ],
             'projects' => [
-                'title' => 'Projets',
+                'title' => 'Projects',
                 'all' => 'All',
                 'project1' => 'Public',
                 'project2' => 'Children',
