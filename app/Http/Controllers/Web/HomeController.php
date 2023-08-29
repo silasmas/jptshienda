@@ -249,7 +249,7 @@ class HomeController extends Controller
                 ]);
                 $transaction_type = json_decode($response_transaction_type->getBody(), false);
 
-                return view('welcome');
+                return view('index');
                 // return view('welcome', [
                 //     'countries' => $country->data,
                 //     'offer_types' => $offer_type->data,
@@ -258,7 +258,7 @@ class HomeController extends Controller
 
             } catch (ClientException $e) {
                 // If the API returns some error, return to the page and display its message
-                return view('welcome', [
+                return view('index', [
                     'response_error' => json_decode($e->getResponse()->getBody()->getContents(), false),
                 ]);
             }
