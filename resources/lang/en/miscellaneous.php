@@ -22,6 +22,7 @@ return [
     'call_us' => 'Call us:',
     'bank_transaction_description' => 'Bank transaction from the JPTSHIENDA application',
     'your_language' => 'Your language',
+    'your_activation_code' => 'Your activation code :\\n',
     'back_home' => 'Return to the home',
     'back_list' => 'Return to the list',
     'back_form' => 'Return to the form',

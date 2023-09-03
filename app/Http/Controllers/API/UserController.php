@@ -68,7 +68,6 @@ class UserController extends BaseController
         ];
         $users = User::all();
         $password_resets = PasswordReset::all();
-        // $basic  = new \Vonage\Client\Credentials\Basic('89e3b822', 'cab98aefeaab1434ACR');
         $basic  = new \Vonage\Client\Credentials\Basic('5a4c014d', 'dhOq17USeZadLgIw');
         $client = new \Vonage\Client($basic);
 
@@ -145,7 +144,7 @@ class UserController extends BaseController
                 ]);
 
                 try {
-                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'ACR', (string) $password_reset->token));
+                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                 } catch (\Throwable $th) {
                     return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -168,7 +167,7 @@ class UserController extends BaseController
                     ]);
 
                     try {
-                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'ACR', (string) $password_reset->token));
+                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                     } catch (\Throwable $th) {
                         return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -191,7 +190,7 @@ class UserController extends BaseController
                 $inputs['password'] = Hash::make($password_reset->former_password);
 
                 try {
-                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'ACR', (string) $password_reset->token));
+                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                 } catch (\Throwable $th) {
                     return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -218,7 +217,7 @@ class UserController extends BaseController
                     $inputs['password'] = Hash::make($password_reset->former_password);
 
                     try {
-                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'ACR', (string) $password_reset->token));
+                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                     } catch (\Throwable $th) {
                         return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -232,7 +231,7 @@ class UserController extends BaseController
         if ($user->lastname != null AND $user->birth_date != null) {
             if ($user->national_number == null) {
                 $user->update([
-                    'national_number' => 'ACR-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($user->lastname, 0, 3)) . '-' . explode('-', $user->birth_date)[0] . '.' . explode('-', $user->birth_date)[1] . '.' . explode('-', $user->birth_date)[2] . '-0000',
+                    'national_number' => 'JP_TSHIENDA-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($user->lastname, 0, 3)) . '-' . explode('-', $user->birth_date)[0] . '.' . explode('-', $user->birth_date)[1] . '.' . explode('-', $user->birth_date)[2] . '-0000',
                     'updated_at' => now(),
                 ]);
             }
@@ -370,7 +369,7 @@ class UserController extends BaseController
             if ($current_user->lastname == null OR $current_user->birth_date == null) {
                 if ($request->lastname != null AND $request->birth_date != null) {
                     $user->update([
-                        'national_number' => 'ACR-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($request->lastname, 0, 3)) . '-' . explode('-', $request->birth_date)[0] . '.' . explode('-', $request->birth_date)[1] . '.' . explode('-', $request->birth_date)[2] . '-0000',
+                        'national_number' => 'JP_TSHIENDA-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($request->lastname, 0, 3)) . '-' . explode('-', $request->birth_date)[0] . '.' . explode('-', $request->birth_date)[1] . '.' . explode('-', $request->birth_date)[2] . '-0000',
                         'updated_at' => now(),
                     ]);
                 }
@@ -379,7 +378,7 @@ class UserController extends BaseController
             if ($current_user->lastname != null AND $current_user->birth_date != null) {
                 if ($current_user->national_number == null) {
                     $user->update([
-                        'national_number' => 'ACR-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($current_user->lastname, 0, 3)) . '-' . explode('-', $current_user->birth_date)[0] . '.' . explode('-', $current_user->birth_date)[1] . '.' . explode('-', $current_user->birth_date)[2] . '-0000',
+                        'national_number' => 'JP_TSHIENDA-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($current_user->lastname, 0, 3)) . '-' . explode('-', $current_user->birth_date)[0] . '.' . explode('-', $current_user->birth_date)[1] . '.' . explode('-', $current_user->birth_date)[2] . '-0000',
                         'updated_at' => now(),
                     ]);
                 }

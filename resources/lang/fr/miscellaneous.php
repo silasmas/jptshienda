@@ -22,6 +22,7 @@ return [
     'call_us' => 'Appelez-nous :',
     'bank_transaction_description' => 'Transaction bancaire depuis l\'application JPTSHIENDA',
     'your_language' => 'Votre langue',
+    'your_activation_code' => 'Votre code d\'activation :\\n',
     'back_home' => 'Retour à l\'accueil',
     'back_list' => 'Retourner à la liste',
     'back_form' => 'Retourner au formulaire',
