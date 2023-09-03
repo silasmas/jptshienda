@@ -270,7 +270,7 @@ class UserController extends BaseController
                 foreach ($role_users as $executive):
                     Notification::create([
                         'notification_url' => 'members/' . $user->id,
-                        'notification_content' => $user->firstname . ' ' . $user->lastname . ' ' . __('notifications.subscribed_to_party'),
+                        'notification_content' => $user->firstname . ' ' . $user->lastname . ' ' . __('notifications.subscribed_to_foundation'),
                         'status_id' => $status_unread->id,
                         'user_id' => $executive->user_id
                     ]);
