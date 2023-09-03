@@ -144,7 +144,7 @@ class UserController extends BaseController
                 ]);
 
                 try {
-                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
+                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'Fond. Jean-Pierre Tshienda', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                 } catch (\Throwable $th) {
                     return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -167,7 +167,7 @@ class UserController extends BaseController
                     ]);
 
                     try {
-                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
+                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'Fond. Jean-Pierre Tshienda', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                     } catch (\Throwable $th) {
                         return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -190,7 +190,7 @@ class UserController extends BaseController
                 $inputs['password'] = Hash::make($password_reset->former_password);
 
                 try {
-                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
+                    $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'Fond. Jean-Pierre Tshienda', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                 } catch (\Throwable $th) {
                     return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
@@ -217,7 +217,7 @@ class UserController extends BaseController
                     $inputs['password'] = Hash::make($password_reset->former_password);
 
                     try {
-                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JP_TSHIENDA', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
+                        $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'Fond. Jean-Pierre Tshienda', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
                     } catch (\Throwable $th) {
                         return $this->handleError($th->getMessage(), __('notifications.create_user_SMS_failed'), 500);
