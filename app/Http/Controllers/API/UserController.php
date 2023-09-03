@@ -251,14 +251,14 @@ class UserController extends BaseController
             $status_ongoing = Status::where('status_name', 'En attente')->first();
             $status_unread = Status::where('status_name', 'Non lue')->first();
             $admin_role = Role::where('role_name', 'Administrateur')->first();
-            $supporting_member_role = Role::where('role_name', 'Membre Sympathisant')->first();
-            $effecive_member_role = Role::where('role_name', 'Membre Effectif')->first();
+            $ordinary_member_role = Role::where('role_name', 'Membre Ordinaire')->first();
+            $ordinary_diaspora_member_role = Role::where('role_name', 'Membre Ordinaire Diaspora')->first();
             $honorary_member_role = Role::where('role_name', 'Membre d\'Honneur')->first();
             $current_role = Role::find($request->role_id);
 
             // If the new user is a member, send notification to 
             // all managers and a welcome notification to the new user
-            if ($current_role->id == $supporting_member_role->id OR $current_role->id == $effecive_member_role->id OR $current_role->id == $honorary_member_role->id) {
+            if ($current_role->id == $ordinary_member_role->id OR $current_role->id == $ordinary_diaspora_member_role->id OR $current_role->id == $honorary_member_role->id) {
                 $user->update([
                     'status_id' => $status_ongoing->id,
                     // 'status_id' => $status_activated->id,
@@ -285,7 +285,7 @@ class UserController extends BaseController
             }
 
             // If the new user is neither a member nor an admin, send a ordinary welcome notification
-            if ($current_role->id != $supporting_member_role->id AND $current_role->id != $effecive_member_role->id AND $current_role->id != $honorary_member_role->id AND $current_role->id != $admin_role->id) {
+            if ($current_role->id != $ordinary_member_role->id AND $current_role->id != $ordinary_diaspora_member_role->id AND $current_role->id != $honorary_member_role->id AND $current_role->id != $admin_role->id) {
                 $user->update([
                     'status_id' => $status_activated->id,
                 ]);
