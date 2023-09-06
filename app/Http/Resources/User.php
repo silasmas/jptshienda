@@ -37,7 +37,7 @@ class User extends JsonResource
             'password' => $this->password,
             'remember_token' => $this->remember_token,
             'api_token' => $this->api_token,
-            'avatar_url' => $this->avatar_url != null ? (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/public/storage/' . $this->avatar_url : null,
+            'avatar_url' => 'https://api.jptshienda.cd/public/storage/',
             // 'avatar_url' => $this->avatar_url != null ? '/storage/' . $this->avatar_url : null,
             'identity_data' => Image::make($this->image),
             'status' => Status::make($this->status),
