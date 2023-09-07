@@ -21,8 +21,10 @@ class Image extends JsonResource
         return [
             'id' => $this->id,
             'image_name' => $this->image_name,
-            'url_recto' => 'https://api.jptshienda.cd/public/storage/' . $this->url_recto,
-            'url_verso' => 'https://api.jptshienda.cd/public/storage/' . $this->url_verso,
+            'url_recto' => !empty($this->url_recto) ? 'https://api.jptshienda.cd/public/storage/' . $this->url_recto : null,
+            'url_verso' => !empty($this->url_verso) ? 'https://api.jptshienda.cd/public/storage/' . $this->url_verso : null,
+            // 'url_recto' => !empty($this->url_recto) ? 'https://jptshienda.dev:1443/storage/' . $this->url_recto : null,
+            // 'url_verso' => !empty($this->url_verso) ? 'https://jptshienda.dev:1443/storage/' . $this->url_verso : null,
             'description' => $this->description,
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),

@@ -66,17 +66,17 @@ class NewsController extends BaseController
         $status_unread = Status::where('status_name', 'Non lue')->first();
         $news_type = Type::find($inputs['type_id']);
 
-        $supporting_member_role = Role::where('role_name', 'Membre Sympathisant')->first();
-        $effecive_member_role = Role::where('role_name', 'Membre Effectif')->first();
+        $ordinary_member_role = Role::where('role_name', 'Membre Ordinaire')->first();
+        $ordinary_diaspora_member_role = Role::where('role_name', 'Membre Ordinaire Diaspora')->first();
         $honorary_member_role = Role::where('role_name', 'Membre d\'Honneur')->first();
-        $founder_signatory_role = Role::where('role_name', 'Fondateur Signataire de Statuts')->first();
-        $founder_initiator_role = Role::where('role_name', 'Fondateur Initiateur')->first();
-        $role_users = RoleUser::where('role_id', $supporting_member_role->id)->orWhere('role_id', $effecive_member_role->id)->orWhere('role_id', $honorary_member_role->id)->orWhere('role_id', $founder_signatory_role->id)->orWhere('role_id', $founder_initiator_role->id)->get();
+        $sponsor_member_role = Role::where('role_name', 'Membre Sponsor')->first();
+        $temporary_member_role = Role::where('role_name', 'Membre Temporaire au Service Volontaire')->first();
+        $role_users = RoleUser::where('role_id', $ordinary_member_role->id)->orWhere('role_id', $ordinary_diaspora_member_role->id)->orWhere('role_id', $honorary_member_role->id)->orWhere('role_id', $sponsor_member_role->id)->orWhere('role_id', $temporary_member_role->id)->get();
 
         foreach ($role_users as $member):
             Notification::create([
                 'notification_url' => 'works/' . $news->id,
-                'notification_content' => __('notifications.party_published') . ' ' . ($news_type->type_name == 'Actualité' ? __('miscellaneous.a_feminine') : __('miscellaneous.a_masculine')) . ' ' . strtolower($news_type->type_name),
+                'notification_content' => __('notifications.foundation_published') . ' ' . ($news_type->type_name == 'Actualité' ? __('miscellaneous.a_feminine') : __('miscellaneous.a_masculine')) . ' ' . strtolower($news_type->type_name),
                 'status_id' => $status_unread->id,
                 'user_id' => $member->user_id,
             ]);
@@ -164,17 +164,17 @@ class NewsController extends BaseController
         $status_unread = Status::where('status_name', 'Non lue')->first();
         $news_type = Type::find($inputs['type_id']);
 
-        $supporting_member_role = Role::where('role_name', 'Membre Sympathisant')->first();
-        $effecive_member_role = Role::where('role_name', 'Membre Effectif')->first();
+        $ordinary_member_role = Role::where('role_name', 'Membre Ordinaire')->first();
+        $ordinary_diaspora_member_role = Role::where('role_name', 'Membre Ordinaire Diaspora')->first();
         $honorary_member_role = Role::where('role_name', 'Membre d\'Honneur')->first();
-        $founder_signatory_role = Role::where('role_name', 'Fondateur Signataire de Statuts')->first();
-        $founder_initiator_role = Role::where('role_name', 'Fondateur Initiateur')->first();
-        $role_users = RoleUser::where('role_id', $supporting_member_role->id)->orWhere('role_id', $effecive_member_role->id)->orWhere('role_id', $honorary_member_role->id)->orWhere('role_id', $founder_signatory_role->id)->orWhere('role_id', $founder_initiator_role->id)->get();
+        $sponsor_member_role = Role::where('role_name', 'Membre Sponsor')->first();
+        $temporary_member_role = Role::where('role_name', 'Membre Temporaire au Service Volontaire')->first();
+        $role_users = RoleUser::where('role_id', $ordinary_member_role->id)->orWhere('role_id', $ordinary_diaspora_member_role->id)->orWhere('role_id', $honorary_member_role->id)->orWhere('role_id', $sponsor_member_role->id)->orWhere('role_id', $temporary_member_role->id)->get();
 
         foreach ($role_users as $member):
             Notification::create([
                 'notification_url' => 'works/' . $news->id,
-                'notification_content' => __('notifications.party_changed') . ' ' . ($news_type->type_name == 'Actualité' ? __('miscellaneous.a_feminine') : __('miscellaneous.a_masculine')) . ' ' . strtolower($news_type->type_name),
+                'notification_content' => __('notifications.foundation_changed') . ' ' . ($news_type->type_name == 'Actualité' ? __('miscellaneous.a_feminine') : __('miscellaneous.a_masculine')) . ' ' . strtolower($news_type->type_name),
                 'status_id' => $status_unread->id,
                 'user_id' => $member->user_id,
             ]);
