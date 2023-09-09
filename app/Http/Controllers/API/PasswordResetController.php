@@ -232,7 +232,7 @@ class PasswordResetController extends BaseController
             ]);
 
             try {
-                $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'ACR', (string) $password_reset->token));
+                $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JPTshienda', (string) $password_reset->token));
 
             } catch (\Throwable $th) {
                 $response_error = json_decode($th->getMessage(), false);
