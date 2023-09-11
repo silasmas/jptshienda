@@ -145,52 +145,52 @@ return [
     'custom' => [
         'email' => [
             'incorrect' => 'Koma adresse e-mail ya malamu svp',
-            'exists' => 'Addresse e-mail oyo epesami ezali déjà',
+            'exists' => 'Adresse e-mail oyo epesami ezali déjà',
         ],
         'phone' => [
             'incorrect' => 'Bokoma nimero ya telefone ya malamu svp',
             'exists' => 'Nimero ya telefone oyo epesami ezali déjà',
         ],
         'former_password' => [
-            'empty' => 'Please enter your old password!',
-            'incorrect' => 'The former password is incorrect',
+            'empty' => 'Svp kotisa mot de passe na yo ya kala!',
+            'incorrect' => 'Mot de passe ya kala yango wana te',
         ],
         'new_password' => [
-            'empty' => 'Please enter your new password!',
-            'incorrect' => 'The new password must respect our conditions',
+            'empty' => 'Svp kotisa mot de passe na yo ya sika!',
+            'incorrect' => 'Mot de passe ya sika esengeli e respecter ba conditions na biso',
         ],
         'email_or_phone' => [
-            'required' => 'The email address or the phone number must be defined'
+            'required' => 'Esengeli kopesa adresse e-mail to nimero ya telefone'
         ],
         'surname_and_birthdate' => [
-            'required' => 'The surname and the birth date must be defined'
+            'required' => 'Esengeli kopesa nkombo ya libota mpe mokolo ya mbotama'
         ],
         'group_name' => [
-            'exists' => 'This group name already exists'
+            'exists' => 'Groupe oyo ezali déjà'
         ],
         'role_name' => [
-            'exists' => 'This role name already exists'
+            'exists' => 'Kombo ya role oyo ezali déjà'
         ],
         'content' => [
-            'exists' => 'This content already exists'
+            'exists' => 'Biloko ya kati oyo ezali déjà'
         ],
         'subject' => [
-            'exists' => 'This subject already exists'
+            'exists' => 'Subjet oyo ezali déjà'
         ],
         'title' => [
-            'exists' => 'This title already exists'
+            'exists' => 'Titre oyo ezali déjà'
         ],
         'description' => [
-            'exists' => 'This description already exists'
+            'exists' => 'Description oyo ezali déjà'
         ],
         'country_name' => [
-            'exists' => 'This country already exists'
+            'exists' => 'Mboka oyo ezali déjà'
         ],
         'owner' => [
-            'required' => 'What entity does it belong to?'
+            'required' => 'Ezali ya entite nini?'
         ],
         'type_name' => [
-            'exists' => 'This type name already exists'
+            'exists' => 'Kombo ya type oyo eza déjà'
         ],
     ],
 
