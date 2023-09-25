@@ -231,7 +231,7 @@ class UserController extends BaseController
         if ($user->lastname != null AND $user->birth_date != null) {
             if ($user->national_number == null) {
                 $user->update([
-                    'national_number' => 'JP_TSHIENDA-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($user->lastname, 0, 3)) . '-' . explode('-', $user->birth_date)[0] . '.' . explode('-', $user->birth_date)[1] . '.' . explode('-', $user->birth_date)[2] . '-0000',
+                    'national_number' => '41-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($user->lastname, 0, 3)) . '-' . explode('-', $user->birth_date)[0] . '.' . explode('-', $user->birth_date)[1] . '.' . explode('-', $user->birth_date)[2] . '-0000',
                     'updated_at' => now(),
                 ]);
             }
@@ -369,7 +369,7 @@ class UserController extends BaseController
             if ($current_user->lastname == null OR $current_user->birth_date == null) {
                 if ($request->lastname != null AND $request->birth_date != null) {
                     $user->update([
-                        'national_number' => 'JP_TSHIENDA-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($request->lastname, 0, 3)) . '-' . explode('-', $request->birth_date)[0] . '.' . explode('-', $request->birth_date)[1] . '.' . explode('-', $request->birth_date)[2] . '-0000',
+                        'national_number' => '41-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($request->lastname, 0, 3)) . '-' . explode('-', $request->birth_date)[0] . '.' . explode('-', $request->birth_date)[1] . '.' . explode('-', $request->birth_date)[2] . '-0000',
                         'updated_at' => now(),
                     ]);
                 }
@@ -378,7 +378,7 @@ class UserController extends BaseController
             if ($current_user->lastname != null AND $current_user->birth_date != null) {
                 if ($current_user->national_number == null) {
                     $user->update([
-                        'national_number' => 'JP_TSHIENDA-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($current_user->lastname, 0, 3)) . '-' . explode('-', $current_user->birth_date)[0] . '.' . explode('-', $current_user->birth_date)[1] . '.' . explode('-', $current_user->birth_date)[2] . '-0000',
+                        'national_number' => '41-' . Random::generate(4, '0-9') . '-' . strtoupper(substr($current_user->lastname, 0, 3)) . '-' . explode('-', $current_user->birth_date)[0] . '.' . explode('-', $current_user->birth_date)[1] . '.' . explode('-', $current_user->birth_date)[2] . '-0000',
                         'updated_at' => now(),
                     ]);
                 }
