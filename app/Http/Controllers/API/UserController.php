@@ -781,6 +781,10 @@ class UserController extends BaseController
         ];
         $user = User::find($id);
 
+        if (is_null($user)) {
+            return $this->handleError($inputs['former_password'], __('notifications.find_user_404'), 404);
+        }
+
         if ($inputs['former_password'] == null) {
             return $this->handleError($inputs['former_password'], __('validation.custom.former_password.empty'), 400);
         }
