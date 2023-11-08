@@ -211,11 +211,11 @@ class PasswordResetController extends BaseController
         $user = User::where('phone', $data)->first();
 
         if (is_null($user)) {
-            return $this->handleError(__('notifications.find_user_404'));
+            return $this->handleError($inputs['phone'], __('notifications.find_user_404'), 404);
         }
 
         if (is_null($password_reset)) {
-            return $this->handleError(__('notifications.find_password_reset_404'));
+            return $this->handleError($inputs['phone'], __('notifications.find_password_reset_404'), 404);
         }
 
         if ($password_reset->phone != null) {
@@ -232,7 +232,7 @@ class PasswordResetController extends BaseController
             ]);
 
             try {
-                $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JPTshienda', (string) $password_reset->token));
+                $client->sms()->send(new \Vonage\SMS\Message\SMS($password_reset->phone, 'JPTshienda', __('miscellaneous.your_activation_code') . (string) $password_reset->token));
 
             } catch (\Throwable $th) {
                 $response_error = json_decode($th->getMessage(), false);
