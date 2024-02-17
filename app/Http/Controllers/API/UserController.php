@@ -816,7 +816,7 @@ class UserController extends BaseController
         if ($password_reset_by_email != null) {
             // Update password reset in the case user want to reset his password
             $password_reset_by_email->update([
-                'code' => random_int(1000000, 9999999),
+                'token' => random_int(1000000, 9999999),
                 'former_password' => $inputs['new_password'],
                 'updated_at' => now(),
             ]);
@@ -825,7 +825,7 @@ class UserController extends BaseController
         if ($password_reset_by_phone != null) {
             // Update password reset in the case user want to reset his password
             $password_reset_by_phone->update([
-                'code' => random_int(1000000, 9999999),
+                'token' => random_int(1000000, 9999999),
                 'former_password' => $inputs['new_password'],
                 'updated_at' => now(),
             ]);
