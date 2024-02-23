@@ -18,7 +18,7 @@ class User extends JsonResource
      */
     public function toArray($request)
     {
-        $roles_user = RoleUser::collection($this->role_users)->toArray();
+        $roles_user = RoleUser::collection($this->role_users)->sortBy('created_at')->toArray();
 
         return [
             'id' => $this->id,
